@@ -1,0 +1,10 @@
+Clould not connect sql server from cointainer
+https://github.com/microsoft/msphpsql/issues/302
+This gentleman helped relif suffering
+aeslinger0 commented on 3 Jan 2020
+Rather than use IP addresses, which would be problematic in a team environment, you can also use host.docker.internal which will resolve to your host IP.
+Data Source=host.docker.internal,1433;Initial Catalog=MyDB;User ID=MyUser;Password=MyPassword
+//for docker compose
+var defaultServer = @"host.docker.internal\sqlserver";
+//for mannual migration
+var defaultServer = "localhost";

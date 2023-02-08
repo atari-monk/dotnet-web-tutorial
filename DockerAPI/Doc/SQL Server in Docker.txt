@@ -1,0 +1,26 @@
+Ingredients
+- Docker Desktop (Win) / Docker CE (linux)
+- VS Code, docker plugin (optional)
+- SQL Server tools (optional)
+- https://hub.docker.com/_/microsoft-mssql-server
+
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=youradminpassword' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest-ubuntu
+
+to connect to docker container mssql in server management studio
+Server name: localhost (or localhost.1433)
+Auth: Server Auth
+Login: SA
+Password: youradminpassword
+
+to use cli of mssql container
+// plugin has atach shell option
+// or in cli, show containers ids
+docker ps
+docker exec -it containerid /opt/mssql-tools/bin/sqlcmd -s localhost -u SA -p youradminpassword
+
+//type commands, for example
+select name from sys.sysdatabases;
+go
+
+//you can use this mssql container as if locl mssql instance
+//if you have api in container additional setup is needed (docker compose)

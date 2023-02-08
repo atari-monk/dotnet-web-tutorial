@@ -1,0 +1,18 @@
+cli:
+dotnet new sln
+dotnet new  webapi -n Catalog
+dotnet sln add .\Catalog\
+dotnet dev-certs https --trust
+
+browser:
+https://localhost:7292/
+https://localhost:7292/swagger/index.html
+
+VSCode:
+add 
+"group": {
+    "kind": "build",
+    "isDefault": true
+}
+to tasks build task section
+ctrl+shift+b - run build task

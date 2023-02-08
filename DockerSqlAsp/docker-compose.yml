@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  dockersqlasp:
+    image: ${DOCKER_REGISTRY-}dockersqlasp
+    build:
+      context: .
+      dockerfile: DockerSqlAsp/Dockerfile
+  sqldb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=l7dv4R4~ViiMxV6N2u!Mu3
+      - ACCEPT_EULA=Y
+    ports:
+      - "1440:1433"

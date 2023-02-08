@@ -1,0 +1,49 @@
+https://codebuckets.com/2020/08/14/applying-entity-framework-migrations-to-a-docker-container/
+//1. Run locally
+//if other context is set
+docker context use default
+//to remove image
+docker image rm commander-commander-api
+docker-compose up --build -d --force-recreate
+docker images
+docker ps
+//to remove containers
+docker-compose down
+
+//2. Test url in browser
+http://localhost:80/api/commands
+
+//3. Run down locall instances
+docker-compose down
+
+//4. Login to your azure container registry
+az acr login --name atarimonkacr
+
+//5. Push image to container registry
+docker-compose push
+
+//5. Verify if image is in repository
+az acr repository show --name atarimonkacr --repository commander-api
+//in case you want to delete repository
+az acr repository delete --name atarimonkacr --repository commander-api
+
+//6. Login to Azure to use docker commands
+docker login azure
+
+//7. Set context
+docker context use atarimonkacicontext
+
+//8. Start app in azure container instances
+docker compose up
+
+//9. Get app ip
+docker ps
+
+//10. Test ip in browser
+
+az container logs --resource-group CommonResourceGroup --name commander --container-name commander-api
+az container attach --resource-group CommonResourceGroup --name commander --container-name commander-api
+az container attach --resource-group CommonResourceGroup --name commander --container-name ms-sql-server
+
+//11. To stop and delete containers
+docker compose down

@@ -1,0 +1,15 @@
+https://learn.microsoft.com/en-us/sql/linux/tutorial-restore-backup-in-sql-server-container?view=sql-server-ver16
+docker exec -it sqlserver mkdir /var/opt/mssql/backup
+//curl -OutFile "wwi.bak" "https://github.com/Microsoft/sql-server-samples/releases/download/wide-world-importers-v1.0/WideWorldImporters-Full.bak"
+docker cp C:\kmazanek.gmail.com\Db\CommandDb.bak sqlserver:/var/opt/mssql/backup
+//this shows names for restore cmd
+docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost ` -U SA -P 'TUC:GR8?MHYP' ` -Q "RESTORE FILELISTONLY FROM DISK = '/var/opt/mssql/backup/CommandDb.bak'"
+//notice diffrent names in bak (db was renamed after backup)
+docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd ` -S localhost -U SA -P 'TUC:GR8?MHYP' ` -Q "RESTORE DATABASE CommandDb FROM DISK='/var/opt/mssql/backup/CommandDb.bak' WITH MOVE 'CommanderDB' TO '/var/opt/mssql/data/CommandDb.mdf', MOVE 'CommanderDB_log' TO '/var/opt/mssql/data/CommandDb_log.ldf'"
+
+//verify
+docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd ` -S localhost -U SA -P 'TUC:GR8?MHYP' ` -Q "SELECT Name FROM sys.Databases"
+//create new backup
+docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd ` -S localhost -U SA -P 'TUC:GR8?MHYP' ` -Q "BACKUP DATABASE [CommandDb] TO DISK = N'/var/opt/mssql/backup/CommandDb2.bak' WITH NOFORMAT, NOINIT, NAME = 'CommandDb', SKIP, NOREWIND, NOUNLOAD, STATS = 10"
+//
+docker cp sqlserver:/var/opt/mssql/backup/CommandDb2.bak C:\kmazanek.gmail.com\Db\CommandDb2.bak

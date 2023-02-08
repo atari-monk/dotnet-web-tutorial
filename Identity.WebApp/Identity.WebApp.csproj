@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-Identity.WebApp-9ce0f67f-54ee-47d3-9d42-9dd2e3303e68</UserSecretsId>
+    <RestoreSources>$(RestoreSources);C:\atari-monk\nugets;https://api.nuget.org/v3/index.json</RestoreSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Connection.Builder" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>

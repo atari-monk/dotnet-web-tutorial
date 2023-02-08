@@ -1,0 +1,11 @@
+,
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=localhost; Initial Catalog=CommandDb; User Id=SA; Password=Pa$$w0rd2022",
+    "LocalConnection": "Server=(LocalDb)\\MSSQLLocalDB;Initial Catalog=CommandDb;User ID=CommandApi; Password=Pa$$w0rd2022"
+  }
+  ,
+    "ConnectionStrings": {
+        "DefaultConnection": "Data Source=localhost; Initial Catalog=CommandDb; User Id=SA; Password=Pa$$w0rd2022",
+        "LocalConnection": "Server=(LocalDb)\\MSSQLLocalDB;Initial Catalog=CommandDb;User ID=CommandApi; Password=Pa$$w0rd2022",
+        "ContainerConnection": "Data Source=sqlserver;Initial Catalog=CommandDb;User ID=SA; Password=Pa$$w0rd2022"
+      }

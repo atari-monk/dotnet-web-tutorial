@@ -1,0 +1,23 @@
+﻿@model DockerSqlAsp.Models.Film
+@{
+    ViewData["Title"] = "Modify a Movie";
+}
+
+<h1 class="bg-info text-white">Modify a Movie</h1>
+<a class="btn btn-block btn-success" asp-action="Index">Show all Movies</a>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Id">Id</label>
+        <input class="form-control-range" type="text" asp-for="Id" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="MovieName">Movie Name</label>
+        <input class="form-control-range" type="text" asp-for="MovieName" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ReleaseYear">Release Year</label>
+        <input class="form-control-range" type="text" asp-for="ReleaseYear" />
+    </div>
+    <button class="btn btn-secondary" type="submit">Modify a movie</button>
+</form>

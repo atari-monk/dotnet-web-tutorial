@@ -1,0 +1,43 @@
+Notes on set up asp.net web app with sql server with docker compose
+https://www.section.io/engineering-education/dockerizing-an-aspnet-core-web-api-app-and-sql-server/
+This done in Visual Studio
+SqlServer
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=x" -p 1450:1433 --name sqlserverdb -h mysqlserver -d mcr.microsoft.com/mssql/server:2022-latest
+SQL Server Management Studio
+localhost,1450
+SA
+x
+Add app ASP.NET Core Web App (Model-View-Controller)
+DockerSqlAsp
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.SqlServer
+add app files
+appsettings.json
+"ConnectionStrings": {
+    "DefaultConnection": "Initial Catalog=FilmDb; Data Source=localhost,1450; Persist Security Info=True;User ID=SA;Password=x"
+}
+Program.cs
+builder.Services.AddDbContext<FilmContext>(options =>
+	   options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+Add-Migration Initial
+Update-Database
+Proj, Right click Menu, Add, Container Orchestration Support (VS)
+Add to compose file
+sqldb:
+  image: mcr.microsoft.com/mssql/server:2022-latest
+  environment:
+    - SA_PASSWORD=x
+    - ACCEPT_EULA=Y
+  ports:
+    - "1440:1433"
+SQL Server Management Studio
+localhost,1440
+SA
+x
+Set as startup na projekt apki
+Migracja dla localhost,1440
+In json, change DefaultConnection to sqldb
+Set as startup na docker compose
+Test app

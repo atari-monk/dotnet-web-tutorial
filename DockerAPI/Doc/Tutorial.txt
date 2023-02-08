@@ -1,0 +1,32 @@
+# To Build docker image with Dockerfile and .dockerignore
+docker --version
+# cd AppFolder
+docker build -t kmazanek/dockerapi .
+# list images
+docker images
+# alse docker VSCode extension has imgages list
+# run container, -p maps local port to container port in Dockerfile
+docker run -p 8080:80 kmazanek/dockerapi
+# test in browser
+http://localhost:8080/WeatherForecast
+# this was how to run your api in localhost docker container
+# show list of running containers
+docker ps
+# docker stop <CONTAINER ID>
+# extension can stop container also
+# now to deploy image to dockerhub
+# login to dockerhub webpage for later check
+# push image
+docker push kmazanek/dockerapi
+# Explore page has many images of popular software
+# To run image on linux that has only docker on it
+sudo docker --version
+sudo docker run -p 8080:80 kmazanek/dockerapi
+sudo docker ps
+http://localhost:8080/WeatherForecast
+# To run image on Azure
+go to azure.portal
+create resource - container instance
+fill the form with data on your image container
+create the resource, get link http://dockerapicontainer.germanywestcentral.azurecontainer.io/WeatherForecast
+and test it in browser

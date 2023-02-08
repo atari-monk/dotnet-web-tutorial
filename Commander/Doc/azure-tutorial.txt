@@ -1,0 +1,60 @@
+https://learn.microsoft.com/en-us/azure/container-instances/tutorial-docker-compose
+//1. Create resource group
+az group create --name CommonResourceGroup --location swedencentral
+
+//2. Create azure container registry
+az acr create --resource-group CommonResourceGroup --name atarimonkacr --sku Basic
+
+//3. Login to your azure container registry
+az acr login --name atarimonkacr
+
+//4. Get code of example app
+cd C:\atarimonk\Code
+git clone https://github.com/Azure-Samples/azure-voting-app-redis.git
+cd azure-voting-app-redis
+
+//5. Modiffy docker compose file
+front ports to "80:80", image to image: atarimonkacr.azurecr.io/azure-vote-front:v1
+
+//6. Run locally
+docker-compose up --build -d
+docker images
+docker ps
+
+//7. Test url in browser
+http://localhost:80
+
+//8. Run down locall instances
+docker-compose down
+
+//9. Push image to container registry
+docker-compose push
+
+//10. Verify if image is in repository
+az acr repository show --name atarimonkacr --repository azure-vote-front
+
+//11. Login to Azure to use docker commands
+docker login azure
+
+//12. Add your acr context
+docker context create aci atarimonkacicontext
+
+//13. Verify you added
+docker context ls
+
+//14. Set context
+docker context use atarimonkacicontext
+
+//15. Start app in azure container instances
+docker compose up
+
+//16. Get app ip
+docker ps
+
+//17. Test ip in browser
+
+//18. To see logs (failed)
+docker logs azurevotingappredis_azure-vote-front
+
+//19. To stop and delete containers
+docker compose down

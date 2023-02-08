@@ -1,0 +1,11 @@
+source:
+https://docs.docker.com/samples/dotnetcore/
+and les jacson yt tutorial
+add Dockerfile
+add .dockerignore
+build image:
+docker --version
+docker build -t atarimonk/commander .
+docker run --name commander-api -p 8080:80 -d atarimonk/commander
+docker commit --message 'commander api' commander-api commander-api
+docker push atarimonk/commander

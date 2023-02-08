@@ -1,0 +1,9 @@
+https://www.twilio.com/blog/containerize-your-aspdotnet-core-application-and-sql-server-with-docker
+https://docker-docs.netlify.app/compose/aspnet-mssql-compose/
+https://dev.to/moe23/step-by-step-guide-on-utilising-docker-compose-with-asp-net-core-sql-server-2e54
+https://dotnetthoughts.net/docker-compose-asp-net-core-application/
+https://learn.microsoft.com/en-us/azure/app-service/tutorial-dotnetcore-sqldb-app?tabs=azure-portal%2Cvisualstudio-deploy%2Cdeploy-instructions-azure-portal%2Cazure-portal-logs%2Cazure-portal-resources
+https://github.com/uglide/azure-content/blob/master/articles/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
+https://learn.microsoft.com/en-gb/dotnet/architecture/containerized-lifecycle/design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+https://learn.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/database-server-container

@@ -1,0 +1,2 @@
+https://docs.docker.com/samples/aspnet-mssql-compose/
+docker-compose up -d

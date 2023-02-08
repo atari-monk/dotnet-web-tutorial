@@ -1,0 +1,74 @@
+1. Run api: dotnet run, rest info from console, test in postman
+2. Create account using ManagmentStudio. 
+- appName
+- password (use keePass)
+- do not enforce password policy
+- server roles: sysadmin
+3. EntityFrameworkCore nugets
+- dotnet add package Microsoft.EntityFrameworkCore
+- dotnet add package Microsoft.EntityFrameworkCore.Design
+- dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+4. dotnet ef (unicorn shows, this checks if ef tools installed)
+if not installed
+- dotnet tool install --global dotnet-ef
+5. Add migration
+- dotnet ef migrations add Initial
+6. Remove mistake
+- dotnet ef migrations remove
+7. Create db
+- dotnet ef database update
+8. Example data
+- Id = 1 
+- HowTo = How to create migrations
+- Line = dotnet ef migrations add <Name of Migration>
+- Platform = EF Core
+- Id = 2
+- HowTo = How to run migrations
+- Line = dotnet ef database update
+- Platform = EF Core
+9. DTOs
+Use models for client instead of db models.
+So contract with client is separate from internal implementation.
+-Internal model/ External model DTOs.
+10.
+Test Create in postman
+-Post
+-body
+-json
+-
+{
+    "howTo": "Run a .NET Core app",
+    "line": "dotnet run",
+    "platform": ".NET Core CLI"
+}
+11. Annotations on CommandCreateDto
+will provide much better error info in postman.
+12.
+PATCH
+can do 6 operations for ex.
+{
+    "op": "replace",
+    "path": "/howto",
+    "value": "Some new value"
+}
+{
+    "op": "test",
+    "path": "/line",
+    "value": "dotnet run"
+}
+13.
+For patch nugets needed:
+dotnet add package Microsoft.AspNetCore.JsonPatch
+dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+14.
+To test patch in postman: ([]-can add many ops)
+-body
+-josn
+[
+{
+    "op": "replace",
+    "path": "/howto",
+    "value": "Some new value"
+}
+]
+-patch
