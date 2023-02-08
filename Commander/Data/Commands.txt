@@ -1,0 +1,260 @@
+[
+	{
+		"id": 1,
+		"howTo": "Run a .NET Core app",
+		"line": "dotnet run",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 2,
+		"howTo": "When api needs dev certs",
+		"line": "dotnet dev-certs https",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 3,
+		"howTo": "To show remote repo",
+		"line": "git remote",
+		"platform": "git bash"
+	},
+	{
+		"id": 4,
+		"howTo": "To show commits",
+		"line": "git log",
+		"platform": "git bash"
+	},
+	{
+		"id": 5,
+		"howTo": "To show help on any command",
+		"line": "git remote -h",
+		"platform": "git bash"
+	},
+	{
+		"id": 6,
+		"howTo": "To show command full info",
+		"line": "git remote -v",
+		"platform": "git bash"
+	},
+	{
+		"id": 7,
+		"howTo": "To remove remote",
+		"line": "git remote rm origin",
+		"platform": "git bash"
+	},
+	{
+		"id": 8,
+		"howTo": "To set remote url",
+		"line": "git remote set-url origin https://github.com/krzm/scripter.git",
+		"platform": "git bash"
+	},
+	{
+		"id": 9,
+		"howTo": "To set repo status",
+		"line": "git status",
+		"platform": "git bash"
+	},
+	{
+		"id": 10,
+		"howTo": "Add sln file to folder",
+		"line": "dotnet new sln",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 11,
+		"howTo": "Add proj classlib",
+		"line": "dotnet new classlib -n Some.Name",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 12,
+		"howTo": "Add proj in main folder to sln",
+		"line": "dotnet sln add Some.Name",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 13,
+		"howTo": "Add proj in main folder to sln",
+		"line": "dotnet add [someProjName] reference [someProjName]",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 14,
+		"howTo": "Add proj ref to other proj",
+		"line": "dotnet add [someProjName] reference [someProjName]",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 15,
+		"howTo": "Create the branch on your local machine and switch in this branch",
+		"line": "git checkout -b [name_of_your_new_branch]",
+		"platform": "git"
+	},
+	{
+		"id": 16,
+		"howTo": "Push the branch on github",
+		"line": "git push origin [name_of_your_new_branch]",
+		"platform": "git"
+	},
+	{
+		"id": 17,
+		"howTo": "Switch branch",
+		"line": "git switch [name_of_your_new_branch]",
+		"platform": "git"
+	},
+	{
+		"id": 18,
+		"howTo": "Add migration",
+		"line": "dotnet ef migrations add nameofmigration",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 19,
+		"howTo": "Add migration",
+		"line": "dotnet ef migrations add StartNull --project Log.Data",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 20,
+		"howTo": "Remove migration",
+		"line": "dotnet ef migrations remove --project Log.Data",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 21,
+		"howTo": "Update .net tools",
+		"line": "dotnet tool update --global dotnet-ef",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 22,
+		"howTo": "Show packages",
+		"line": "dotnet list package",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 23,
+		"howTo": "Push local branch to coresponding remote",
+		"line": "git push --set-upstream origin start-null",
+		"platform": "git"
+	},
+	{
+		"id": 24,
+		"howTo": "Docker version",
+		"line": "docker --version",
+		"platform": "docker cli"
+	},
+	{
+		"id": 25,
+		"howTo": "Docker build",
+		"line": "docker build -t kmazanek/platformservice .",
+		"platform": "docker cli"
+	},
+	{
+		"id": 26,
+		"howTo": "Docker run image",
+		"line": "docker run -p 8080:80 -d kmazanek/platformservice",
+		"platform": "docker cli"
+	},
+	{
+		"id": 27,
+		"howTo": "Stops container (pass id)",
+		"line": "docker stop f7feaa4b99e5",
+		"platform": "docker cli"
+	},
+	{
+		"id": 28,
+		"howTo": "Starts container (pass id)",
+		"line": "docker start f7feaa4b99e5",
+		"platform": "docker cli"
+	},
+	{
+		"id": 29,
+		"howTo": "Push image to docker",
+		"line": "docker push kmazanek/platformservice",
+		"platform": "docker cli"
+	},
+	{
+		"id": 30,
+		"howTo": "Clear console",
+		"line": "cls; or clear",
+		"platform": "cli"
+	},
+	{
+		"id": 31,
+		"howTo": "kubernetes version",
+		"line": "kubectl version",
+		"platform": "kubernetes cli"
+	},
+	{
+		"id": 32,
+		"howTo": "kubernetes deploy",
+		"line": "kubectl apply -f platforms-depl.yaml",
+		"platform": "kubernetes cli"
+	},
+	{
+		"id": 33,
+		"howTo": "kubernetes deploy status",
+		"line": "kubectl get deployments",
+		"platform": "kubernetes cli"
+	},
+	{
+		"id": 34,
+		"howTo": "kubernetes pods status",
+		"line": "kubectl get pods",
+		"platform": "kubernetes cli"
+	},
+	{
+		"id": 35,
+		"howTo": "kubernetes delete deployment",
+		"line": "kubectl delete deployment platforms-depl",
+		"platform": "kubernetes cli"
+	},
+	{
+		"id": 36,
+		"howTo": "kubernetes show services",
+		"line": "kubectl get services",
+		"platform": "kubernetes cli"
+	},
+	{
+		"id": 37,
+		"howTo": "Add webapi project",
+		"line": "dotnet new webapi -n ProjectName",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 38,
+		"howTo": "Add nuget",
+		"line": "dotnet add package NugetName",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 39,
+		"howTo": "Restore proj nugets",
+		"line": "dotnet restore projName",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 40,
+		"howTo": "Build realese",
+		"line": "dotnet build --configuration Release",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 41,
+		"howTo": "Build and set version",
+		"line": "dotnet build -p:Version=1.2.3.4",
+		"platform": ".NET Core CLI"
+	},
+	{
+		"id": 42,
+		"howTo": "Add nuget to proj",
+		"line": "dotnet add projName package NugetName",
+		"platform": ".NET Core CLI"
+	}
+	{
+		"id": 43,
+		"howTo": "Start process in powershel",
+		"line": "Start-Process -WindowStyle Hidden code .",
+		"platform": "Powershell"
+	}
+]
